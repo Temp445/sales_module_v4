@@ -1,0 +1,57 @@
+{
+  "name": "frmCustomerItemMaster",
+  "type": "VB.Form",
+  "properties": {
+    "Caption": "Customer Item Master"
+  },
+  "controls": [
+    {
+      "name": "txtcustcode",
+      "type": "TextBox",
+      "properties": {
+        "Locked": true,
+        "ToolTipText": "Select the  Customer. Press F2 or Double Click for Help."
+      },
+      "usage": "Stores Customer Name. F2/DblClick triggers lookup to FAS_PARTY_MASTER to fetch PartyName, PartyCode, CustomerFormulaCode. Tag stores PartyCode (CustomerCode)."
+    },
+    {
+      "name": "txtDefaultFormula",
+      "type": "TextBox",
+      "properties": {
+        "Locked": true,
+        "ToolTipText": "Press F2 / Double click for Formula Help"
+      },
+      "usage": "Stores default formula name. F2/DblClick triggers lookup to COM_FormulaMast_Hdr. Tag stores FormulaID."
+    },
+    {
+      "name": "spItem",
+      "type": "AceSpread",
+      "properties": {
+        "MaxCols": 14
+      },
+      "columns": [
+        { "col": 1, "name": "Item Code", "type": "Text/Lookup", "usage": "Item Code. F2/DblClick lookup to SAL_Customer_ItemMaster or BOM_Material_Master" },
+        { "col": 2, "name": "Description", "type": "Text", "usage": "Item Description" },
+        { "col": 3, "name": "Model", "type": "Text", "usage": "Model" },
+        { "col": 4, "name": "Drawing Issued No", "type": "Text", "usage": "Drawing Issued No" },
+        { "col": 5, "name": "Customer Part No", "type": "Text", "usage": "Customer Part No (Required)" },
+        { "col": 6, "name": "Rate", "type": "Number", "usage": "Rate (Required, > 0)" },
+        { "col": 7, "name": "Assessable Rate", "type": "Number", "usage": "Assessable Rate (Required, > 0)" },
+        { "col": 8, "name": "Valid From", "type": "Date", "usage": "Valid From Date (Required)" },
+        { "col": 9, "name": "Valid To", "type": "Date", "usage": "Valid To Date (Required, > Valid From)" },
+        { "col": 10, "name": "Formula Code", "type": "Text", "usage": "Formula Code (Hidden/Tag)" },
+        { "col": 11, "name": "Formula Name", "type": "Text/Lookup", "usage": "Formula Name. F2 lookup to COM_FormulaMast_Hdr" },
+        { "col": 12, "name": "QC Check Required", "type": "ComboBox", "options": ["Yes", "No"], "usage": "QC Check Required (Required)" },
+        { "col": 13, "name": "Status", "type": "ComboBox", "options": ["Active", "Inactive"], "usage": "Status (Required)" }
+      ]
+    },
+    {
+      "name": "CmdSave",
+      "type": "CommandButton",
+      "properties": {
+        "Caption": "&Save"
+      },
+      "usage": "Saves data using SP SAL_INS_CUSTOMER_ITEMMASTER. Loops through spItem rows."
+    }
+  ]
+}

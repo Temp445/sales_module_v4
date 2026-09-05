@@ -1,0 +1,64 @@
+{
+  "name": "frmCustomerJobworkMaster",
+  "type": "VB.Form",
+  "properties": {
+    "Caption": "Customer Jobwork Master"
+  },
+  "controls": [
+    {
+      "name": "txtVendCode",
+      "type": "TextBox",
+      "properties": {
+        "Locked": true,
+        "ToolTipText": "Select the Customer. Press F2 or Double Click for Help."
+      },
+      "usage": "Stores Customer Name. F2/DblClick lookup to FAS_PARTY_MASTER. Tag stores Customer Code."
+    },
+    {
+      "name": "txtDefaultFormula",
+      "type": "TextBox",
+      "properties": {
+        "Locked": true,
+        "ToolTipText": "Select the Default Formula. Press F2 or Double Click for Help."
+      },
+      "usage": "Stores default formula name. F2 lookup to COM_FormulaMast_Hdr. Tag stores Formula Code."
+    },
+    {
+      "name": "sprItem",
+      "type": "AceSpread",
+      "properties": {
+        "MaxCols": 20
+      },
+      "columns": [
+        { "col": 1, "name": "mFirstCol", "type": "Hidden", "usage": "Row tracker" },
+        { "col": 2, "name": "mrecdItem", "type": "Text/Lookup", "usage": "Received Item Code" },
+        { "col": 3, "name": "mRecdDesc", "type": "Text", "usage": "Received Item Description" },
+        { "col": 4, "name": "mRecdUOM", "type": "Text", "usage": "Received UOM" },
+        { "col": 5, "name": "msentItem", "type": "Text/Lookup", "usage": "Sent Item Code (Parent)" },
+        { "col": 6, "name": "mSentDesc", "type": "Text", "usage": "Sent Item Description" },
+        { "col": 7, "name": "mPartNo", "type": "Text", "usage": "Customer Part No" },
+        { "col": 8, "name": "mSentUOM", "type": "Text", "usage": "Sent UOM" },
+        { "col": 9, "name": "mRatePer", "type": "Number", "usage": "Rate Per Quantity" },
+        { "col": 10, "name": "mRate", "type": "Number", "usage": "Rate" },
+        { "col": 11, "name": "mAssRate", "type": "Number", "usage": "Assessable Rate" },
+        { "col": 12, "name": "mValidFrom", "type": "Date", "usage": "Valid From Date" },
+        { "col": 13, "name": "mValidTo", "type": "Date", "usage": "Valid To Date" },
+        { "col": 14, "name": "mQCCheck", "type": "ComboBox", "options": ["Yes", "No"], "usage": "QC Check Required" },
+        { "col": 15, "name": "mFrmCode", "type": "Hidden", "usage": "Formula Code ID" },
+        { "col": 16, "name": "mFrmName", "type": "Text/Lookup", "usage": "Formula Name" },
+        { "col": 17, "name": "mStatus", "type": "ComboBox", "options": ["Active", "Inactive"], "usage": "Row Status" },
+        { "col": 18, "name": "mRelation", "type": "Hidden", "usage": "Internal Relation tracking" },
+        { "col": 19, "name": "mItemGroupKey", "type": "Hidden", "usage": "Internal ItemGroupKey tracking" },
+        { "col": 20, "name": "mRecdItemCheck", "type": "Hidden", "usage": "Internal Check state" }
+      ]
+    },
+    {
+      "name": "cmdSave",
+      "type": "CommandButton",
+      "properties": {
+        "Caption": "&Save"
+      },
+      "usage": "Saves data to SAL_Jobwork_ItemMaster via mapped Stored Procedure or ORM."
+    }
+  ]
+}

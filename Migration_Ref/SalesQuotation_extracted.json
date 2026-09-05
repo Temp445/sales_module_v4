@@ -1,0 +1,1136 @@
+{
+  "formMetadata": {
+    "name": "frmSalesQuotation"
+  },
+  "controls": [
+    {
+      "name": "txtEnqType",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": false,
+      "maxLength": null,
+      "toolTip": "Sales Enquiry Type",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtEnqNo",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Sales Enquiry. Press F2 or Double Click for Help.",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "dtpEnqDate",
+      "type": "DTPicker",
+      "caption": null,
+      "locked": false,
+      "enabled": false,
+      "maxLength": null,
+      "toolTip": "Sales Enquiry Date",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label9",
+      "type": "Label",
+      "caption": "Enq.No.",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label8",
+      "type": "Label",
+      "caption": "Enq.Type",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label3",
+      "type": "Label",
+      "caption": "Enq.Date",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "optEnq",
+      "type": "OptionButton",
+      "caption": "Enquiry",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "optdirect",
+      "type": "OptionButton",
+      "caption": "Direct",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "cmbQuoType",
+      "type": "ComboBox",
+      "caption": null,
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Sales Quotation Type",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtQuoNo",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": false,
+      "maxLength": null,
+      "toolTip": "Sales Quotation No",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "dpQuoDate",
+      "type": "DTPicker",
+      "caption": null,
+      "locked": false,
+      "enabled": false,
+      "maxLength": null,
+      "toolTip": "Enter the Quotation Date",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label4",
+      "type": "Label",
+      "caption": "Quo.Date",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label2",
+      "type": "Label",
+      "caption": "Quo.No.",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label1",
+      "type": "Label",
+      "caption": "Quo.Type",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "cmdOK",
+      "type": "CommandButton",
+      "caption": "&OK",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Click to OK",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtremarks",
+      "type": "TextBox",
+      "caption": null,
+      "locked": false,
+      "enabled": true,
+      "maxLength": 150,
+      "toolTip": "Enter the Remarks",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtcustcd",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": 50,
+      "toolTip": "Customer",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "dpvalidfrom",
+      "type": "DTPicker",
+      "caption": null,
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Enter the Valid From Date",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "dpvalidto",
+      "type": "DTPicker",
+      "caption": null,
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Enter the Valid Till Date",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label5",
+      "type": "Label",
+      "caption": "Valid From",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label6",
+      "type": "Label",
+      "caption": "Valid Till",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label7",
+      "type": "Label",
+      "caption": "Remarks",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "lbcustcode",
+      "type": "Label",
+      "caption": "Customer",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtFormula",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": 30,
+      "toolTip": "Select the Formula Name. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtPack",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Packing & Forwarding. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtForm",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Form. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtMode",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Mode. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtTerms",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Terms of Payment. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtInsurance",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Insurance. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtFreight",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Freight. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtDelIns",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Delivery Instruction. Press F2 or Double Click for Help",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label10",
+      "type": "Label",
+      "caption": "Formula Name",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label15",
+      "type": "Label",
+      "caption": "Delivery Instruction",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label16",
+      "type": "Label",
+      "caption": "Terms of Payment",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label17",
+      "type": "Label",
+      "caption": "Freight",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label18",
+      "type": "Label",
+      "caption": "Packing && Forwarding",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label19",
+      "type": "Label",
+      "caption": "Form",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label20",
+      "type": "Label",
+      "caption": "Insurance",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "Label21",
+      "type": "Label",
+      "caption": "Mode",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "cmdExit",
+      "type": "CommandButton",
+      "caption": "&Exit",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Click to Exit from the Current Screen",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "cmdClear",
+      "type": "CommandButton",
+      "caption": "&Clear",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Click to Clear the Data",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "cmdSave",
+      "type": "CommandButton",
+      "caption": "&Save",
+      "locked": false,
+      "enabled": false,
+      "maxLength": null,
+      "toolTip": "Click to Save the Data",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "spItem",
+      "type": "Grid",
+      "caption": null,
+      "locked": false,
+      "enabled": false,
+      "maxLength": null,
+      "toolTip": "Enter the Quotation Details",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "cmdCalc",
+      "type": "CommandButton",
+      "caption": "C&alculate",
+      "locked": false,
+      "enabled": false,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtGoodsValue",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": "Select the Enquiry Number. Press F2 / Double Click for Help.",
+      "visible": true,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtUserKey",
+      "type": "TextBox",
+      "caption": null,
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": false,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "txtGrandTotal",
+      "type": "TextBox",
+      "caption": null,
+      "locked": true,
+      "enabled": true,
+      "maxLength": 30,
+      "toolTip": null,
+      "visible": false,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "sprCalc",
+      "type": "Grid",
+      "caption": null,
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": false,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "lblUserKey",
+      "type": "Label",
+      "caption": "User Key",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": false,
+      "required": false,
+      "usage": "UNKNOWN"
+    },
+    {
+      "name": "lblGrandTotal",
+      "type": "Label",
+      "caption": "Grand Total",
+      "locked": false,
+      "enabled": true,
+      "maxLength": null,
+      "toolTip": null,
+      "visible": false,
+      "required": false,
+      "usage": "UNKNOWN"
+    }
+  ],
+  "dataBindings": [
+    {
+      "gridName": "spItem",
+      "columns": [
+        "Item Code",
+        "Description",
+        "UOM",
+        "Qty",
+        "Rate",
+        "Assessable Rate",
+        "Goods Value",
+        "Assessable Value"
+      ]
+    },
+    {
+      "gridName": "sprCalc",
+      "columns": [
+        "Description",
+        "Value",
+        "Amount"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "controlName": "cmbquotype",
+      "eventName": "Click",
+      "procedure": "Private Sub cmbquotype_Click()"
+    },
+    {
+      "controlName": "CmdClear",
+      "eventName": "Click",
+      "procedure": "Private Sub CmdClear_Click()"
+    },
+    {
+      "controlName": "cmdExit",
+      "eventName": "Click",
+      "procedure": "Private Sub cmdExit_Click()"
+    },
+    {
+      "controlName": "cmdOk",
+      "eventName": "Click",
+      "procedure": "Private Sub cmdOk_Click()"
+    },
+    {
+      "controlName": "cmdSave",
+      "eventName": "Click",
+      "procedure": "Private Sub cmdSave_Click()"
+    },
+    {
+      "controlName": "dpquodate",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub dpquodate_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "dpvalidfrom",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub dpvalidfrom_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "dpvalidto",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub dpvalidto_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "Form",
+      "eventName": "KeyPress",
+      "procedure": "Private Sub Form_KeyPress(ByVal KeyAscii As Integer)"
+    },
+    {
+      "controlName": "Form",
+      "eventName": "QueryUnload",
+      "procedure": "Private Sub Form_QueryUnload(ByVal Cancel As Integer,ByVal  UnloadMode As Integer)"
+    },
+    {
+      "controlName": "optdirect",
+      "eventName": "Click",
+      "procedure": "Private Sub optdirect_Click()"
+    },
+    {
+      "controlName": "optEnq",
+      "eventName": "Click",
+      "procedure": "Private Sub optEnq_Click()"
+    },
+    {
+      "controlName": "spItem",
+      "eventName": "DblClick",
+      "procedure": "Private Sub spItem_DblClick(sender as object, e as DblClickEventArgs)"
+    },
+    {
+      "controlName": "spItem",
+      "eventName": "EditMode",
+      "procedure": "Private Sub spItem_EditMode(sender as object, e as EditModeEventArgs)"
+    },
+    {
+      "controlName": "spItem",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub spItem_KeyDown(sender as object, e as KeyDownEventArgs)"
+    },
+    {
+      "controlName": "txtcustcd",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtcustcd_DblClick()"
+    },
+    {
+      "controlName": "txtcustcd",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtcustcd_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtDelIns",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtDelIns_DblClick()"
+    },
+    {
+      "controlName": "txtDelIns",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtDelIns_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtForm",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtForm_DblClick()"
+    },
+    {
+      "controlName": "txtForm",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtForm_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtFormula",
+      "eventName": "Change",
+      "procedure": "Private Sub txtFormula_Change()"
+    },
+    {
+      "controlName": "txtFormula",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtFormula_DblClick()"
+    },
+    {
+      "controlName": "txtFormula",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtFormula_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtFreight",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtFreight_DblClick()"
+    },
+    {
+      "controlName": "txtFreight",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtFreight_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtInsurance",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtInsurance_DblClick()"
+    },
+    {
+      "controlName": "txtInsurance",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtInsurance_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtMode",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtMode_DblClick()"
+    },
+    {
+      "controlName": "txtMode",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtMode_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtPack",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtPack_DblClick()"
+    },
+    {
+      "controlName": "txtPack",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtPack_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtTerms",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtTerms_DblClick()"
+    },
+    {
+      "controlName": "Form",
+      "eventName": "Load",
+      "procedure": "Private Sub Form_Load()"
+    },
+    {
+      "controlName": "txtEnqNo",
+      "eventName": "DblClick",
+      "procedure": "Private Sub txtEnqNo_DblClick()"
+    },
+    {
+      "controlName": "txtEnqNo",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtEnqNo_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "txtremarks",
+      "eventName": "KeyPress",
+      "procedure": "Private Sub txtremarks_KeyPress(ByVal KeyAscii As Integer)"
+    },
+    {
+      "controlName": "txtTerms",
+      "eventName": "KeyDown",
+      "procedure": "Private Sub txtTerms_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)"
+    },
+    {
+      "controlName": "cmdCalc",
+      "eventName": "Click",
+      "procedure": "Private Sub cmdCalc_Click()"
+    },
+    {
+      "controlName": "Design",
+      "eventName": "spItem",
+      "procedure": "Private Sub Design_spItem(ByVal FormPath As String,ByRef  SourceSpread As AceSpread,ByVal  SpreadIndex As String)"
+    },
+    {
+      "controlName": "Design",
+      "eventName": "sprCalc",
+      "procedure": "Private Sub Design_sprCalc(ByVal FormPath As String,ByRef  SourceSpread As AceSpread,ByVal  SpreadIndex As String)"
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Private Sub TermsDetails()",
+      "logicSummary": "Contains 87 lines of code. SQL: Dim sql As String | sql = \" select a.FormCode,(select b.Description from TERMSMASTER b where \" | sql = sql + \" b.TypeFlg='Form' and b.Code=a.FormCode and b.Branchid=a.Branchid \" | sql = sql + \" and b.Compid=a.Compid) FormDesc, a.PackingCode,(select b1.Description \" | sql = sql + \" from TERMSMASTER b1 where b1.TypeFlg='Packing & Forwarding' \" | sql = sql + \" and b1.Code=a.PackingCode and b1.Branchid=a.Branchid \" | sql = sql + \" and b1.Compid=a.Compid) PackingDesc,a.DeliveryCode,(select b2.Description \" | sql = sql + \" from TERMSMASTER b2 where b2.TypeFlg='Delivery Instruction' \" | sql = sql + \" and b2.Code=a.DeliveryCode and b2.Branchid=a.Branchid \" | sql = sql + \" and b2.Compid=a.Compid) DeliveryDesc,a.PaymentCode,(select b3.Description \" | sql = sql + \" from TERMSMASTER b3 where b3.TypeFlg='Payment Terms'\" | sql = sql + \" and b3.Code=a.PaymentCode and b3.Branchid=a.Branchid \" | sql = sql + \" and b3.Compid=a.Compid) PaymentDesc,a.InsuranceCode,(select \" | sql = sql + \" b4.Description from TERMSMASTER b4 where b4.TypeFlg='Insurance'\" | sql = sql + \" and b4.Code=a.InsuranceCode and b4.Branchid=a.Branchid \" | sql = sql + \" and b4.Compid=a.Compid) InsuranceDesc,a.ModeCode,(select \" | sql = sql + \" b5.Description from TERMSMASTER b5 where b5.TypeFlg='Mode'\" | sql = sql + \" and b5.Code=a.ModeCode and b5.Branchid=a.Branchid \" | sql = sql + \" and b5.Compid=a.Compid) ModeDesc,a.Freightcode,(select b6.Description \" | sql = sql + \" from TERMSMASTER b6 where b6.TypeFlg='Freight' and b6.Code=a.FreightCode \" | sql = sql + \" and b6.Branchid=a.Branchid and b6.Compid=a.Compid) FreightDesc,a.CustomerFormulaCode\" | sql = sql + \" from FAS_PARTY_MASTER a where a.Branchid='\" & gBranchID & \"'\" | sql = sql + \" and a.Compid = '\" & gCompID & \"' and a.PartyCode = \" & Val(txtcustcd.Tag) & \"\" | If RSOpen(snap, sql) = False Then GoTo ExitHere"
+    },
+    {
+      "name": "Private Function ValidateData() As Boolean",
+      "logicSummary": "Contains 17 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub cmbquotype_Click()",
+      "logicSummary": "Contains 12 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub SetDocNo()",
+      "logicSummary": "Contains 9 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub CmdClear_Click()",
+      "logicSummary": "Contains 26 lines of code. SQL: Dim sql As String"
+    },
+    {
+      "name": "Private Sub cmdExit_Click()",
+      "logicSummary": "Contains 2 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub cmdOk_Click()",
+      "logicSummary": "Contains 96 lines of code. SQL: Dim sql As String | sql = \"select a.ItemCode,a.ItemDescription,a.UOM,a.Qty,a.Rate,a.AssessableRate from \" | sql = sql + \" SAL_VW_ENQUIRY_DTL a where a.EnquiryType='\" + Trim(txtEnqType) + \"'\" | sql = sql + \" and a.EnquiryNo = \" & Trim(txtEnqNo) & \"\" | sql = sql + \" and a.EnquiryDate = convert(datetime,'\" + Format(Trim(dtpEnqDate), \"yyyy-MM-dd\") + \"',111)\" | sql = sql + \" and a.Branchid = '\" & gBranchID & \"' and a.Compid = '\" & gCompID & \"'\" | 'Sql = Sql + \" and a.Finyear = '\" & gFinyear & \"'\" | If RSOpen(snap, sql) = False Then GoTo ExitHere"
+    },
+    {
+      "name": "Private Sub cmdSave_Click()",
+      "logicSummary": "Contains 114 lines of code. SQL: "
+    },
+    {
+      "name": "Private Function SaveCalcDetails() As Boolean",
+      "logicSummary": "Contains 41 lines of code. SQL: Dim sql As String | sql = \"insert into COM_FormulaCalc_Hdr select '\" & Trim$(cmbQuoType) & \"' DocType,\" & Val(txtQuoNo) & \" DocNo,\" | sql = sql & \"'\" & Format(dpQuoDate, \"yyyy-MM-dd\") & \"' DocDate,\" & gModuleCode & \" ModuleCode,\" & Val(txtFormula.Tag) & \" FrmID,\" | sql = sql & \" a.ExprSeq, a.GrandTotalFlag, b.Result, a.PostingAc,\" | sql = sql & \" '\" & gUserID & \"' UserId, '\" & gBranchID & \"' BranchID, '\" & gCompID & \"' CompID, '\" & gFinyear & \"' Finyear\" ', '\" & Format(curdate, \"yyyy-MM-dd HH:mm:ss\") & \"'\" | sql = sql & \" from COM_FORMULAMAST_DTL a Left Outer Join COM_tmpFormulaCalc_Hdr B\" | sql = sql & \" On a.FrmID=b.FrmID and a.ExprSeq=b.ExprSeq and a.ModuleCode=b.ModuleCode and a.BranchID=b.BranchID and a.CompID=b.CompID\" | sql = sql & \" Where b.DTkey='\" & Trim$(txtUserKey.Text) & \"' and b.UserID='\" & gUserID & \"'\" | sql = sql & \" and a.ModuleCode=\" & gModuleCode & \" and a.BranchID='\" & gBranchID & \"' and a.CompID='\" & gCompID & \"'\" | If DBExecuteSql(db, Sql) = False Then | sql = \"Insert into COM_FormulaCalc_Dtl\" | sql = sql & \" Select '\" & Trim$(cmbQuoType) & \"', \" & Val(txtQuoNo) & \", '\" & Format(dpQuoDate, \"yyyy-MM-dd\") & \"',\" | sql = sql & \" a.ModuleCode, a.FrmID, a.BlockType, a.Block, a.MultiSeq, a.KeyCol, a.IsTypePercentage, a.IsValueEditable, \" | sql = sql & \" a.ValueUsed, a.IsValueEditable, a.UserID, a.BranchID, a.CompID, a.Finyear\" ', '\" & Format(curdate, \"yyyy-MM-dd HH:mm:ss\") & \"'\" | sql = sql & \" from COM_tmpFormulaCalc_Dtl a\" | sql = sql & \" Where a.DTkey='\" & Trim$(txtUserKey.Text) & \"' and a.UserID='\" & gUserID & \"'\" | sql = sql & \" and a.ModuleCode=\" & gModuleCode & \" and a.BranchID='\" & gBranchID & \"' and a.CompID='\" & gCompID & \"'\" | If DBExecuteSql(db, Sql) = False Then"
+    },
+    {
+      "name": "Private Sub dpquodate_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub dpvalidfrom_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub dpvalidto_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub Form_KeyPress(ByVal KeyAscii As Integer)",
+      "logicSummary": "Contains 16 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub Form_QueryUnload(ByVal Cancel As Integer,ByVal  UnloadMode As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub optdirect_Click()",
+      "logicSummary": "Contains 2 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub optEnq_Click()",
+      "logicSummary": "Contains 2 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub spItem_DblClick(sender as object, e as DblClickEventArgs)",
+      "logicSummary": "Contains 47 lines of code. SQL: Dim sql As String | sql = \"select distinct a.ItemCode,c.ItemDescription,a.PartNo,c.UOM,c.UOMDesc,c.UOMDecimal,a.Rate,a.AssessableRate,a.FormulaCode,\" | sql = sql + \"(select top 1 b.FrmLName from COM_FormulaMast_Hdr b where b.ModuleCode = \" & gModuleCode & \" and b.FrmID=a.FormulaCode\" | sql = sql + \" and b.Branchid=a.Branchid and b.Compid=a.Compid) FromulaName from SAL_Customer_ItemMaster a \" | sql = sql + \" left outer join MATERIAL_MASTER c on a.ItemCode = c.ItemCode and a.Branchid=c.Branchid and a.Compid=c.Compid\" | sql = sql + \" where a.rate is not null and a.Branchid = '\" & gBranchID & \"'\" | sql = sql + \" and a.compid='\" & gCompID & \"' and c.Status = 1\" | If FetchValue_New(True, db.ConnectionString, sql, \"11101010000\", \"List of Items for the Customer\", \"Item Code\", \"Item Description\", \"Part No\", \"UOM\", \"Rate\") = True Then"
+    },
+    {
+      "name": "Private Sub spItem_EditMode(sender as object, e as EditModeEventArgs)",
+      "logicSummary": "Contains 41 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub spItem_KeyDown(sender as object, e as KeyDownEventArgs)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtcustcd_DblClick()",
+      "logicSummary": "Contains 23 lines of code. SQL: Dim sql As String | sql = \"select distinct (select b.PartyName from FAS_PARTY_MASTER b where b.PartyCode=a.CustomerCode and b.Branchid=a.Branchid\" | sql = sql + \" and b.Compid=a.Compid) PartyName, a.CustomerCode from SAL_Customer_ItemMaster a \" | sql = sql + \" where a.Branchid = '\" & gBranchID & \"' and a.compid='\" & gCompID & \"'\" | sql = sql & \" order by a.CustomerCode\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Customers\", \"Customer\") = True Then"
+    },
+    {
+      "name": "Private Sub txtcustcd_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtDelIns_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"select Description,Code from TERMSMASTER where typeflg = 'Delivery Instruction' \" | sql = sql + \" and Branchid='\" & gBranchID & \"' and Compid = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Delivery Instruction\", \"Description\") = True Then"
+    },
+    {
+      "name": "Private Sub txtDelIns_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtForm_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"select description,Code from TERMSMASTER where typeflg = 'Form' \" | sql = sql + \" and Branchid='\" & gBranchID & \"' and Compid = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Form's\", \"Description\") = True Then"
+    },
+    {
+      "name": "Private Sub txtForm_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtFormula_Change()",
+      "logicSummary": "Contains 20 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtFormula_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"Select FrmLName, FrmID from COM_FORMULAMAST_HDR\" | sql = sql & \" where ModuleCode=\" & gModuleCode & \" and isActive='1' and BranchID = '\" & gBranchID & \"' and CompID = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Formula's\", \"Formula Name\") = True Then"
+    },
+    {
+      "name": "Private Sub txtFormula_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtFreight_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"select description,Code from TERMSMASTER where typeflg = 'Freight' \" | sql = sql + \" and Branchid='\" & gBranchID & \"' and Compid = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of FreightCode\", \"Description\") = True Then"
+    },
+    {
+      "name": "Private Sub txtFreight_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtInsurance_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"select description,Code from TERMSMASTER where typeflg = 'Insurance'\" | sql = sql + \" and Branchid='\" & gBranchID & \"' and Compid = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Insurance\", \"Description\") = True Then"
+    },
+    {
+      "name": "Private Sub txtInsurance_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtMode_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"select description,Code from TERMSMASTER where typeflg = 'Mode' \" | sql = sql + \" and Branchid='\" & gBranchID & \"' and Compid = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Packing & Forwarding\", \"Description\") = True Then"
+    },
+    {
+      "name": "Private Sub txtMode_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtPack_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"select description,Code from TERMSMASTER where typeflg = 'Packing & Forwarding' \" | sql = sql + \" and Branchid='\" & gBranchID & \"' and Compid = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Packing & Forwarding\", \"Description\") = True Then"
+    },
+    {
+      "name": "Private Sub txtPack_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtTerms_DblClick()",
+      "logicSummary": "Contains 18 lines of code. SQL: Dim sql As String | sql = \"select description,Code from TERMSMASTER where typeflg = 'Payment Terms' \" | sql = sql + \" and Branchid='\" & gBranchID & \"' and Compid = '\" & gCompID & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"10\", \"List of Payment Terms\", \"Description\") = True Then"
+    },
+    {
+      "name": "Private Sub Form_Load()",
+      "logicSummary": "Contains 14 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtEnqNo_DblClick()",
+      "logicSummary": "Contains 24 lines of code. SQL: Dim sql As String | sql = \" select distinct a.EnquiryType,a.EnquiryNo,a.EnquiryDate,a.CustomerCode,a.CustomerName\" | sql = sql + \" from SalesEnquiry a where QuotationNo = 0 and compid='\" & gCompID & \"'\" | 'Sql = Sql + \" and finyear='\" & gFinyear & \"'\" | If FetchValue_New(False, db.ConnectionString, sql, \"11101\", \"List of Enquiry Nos.\", \"Enquiry Type\", \"Enquiry No\", \"Enquiry Date\", \"Customer\") = True Then"
+    },
+    {
+      "name": "Private Sub txtEnqNo_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 2 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtremarks_KeyPress(ByVal KeyAscii As Integer)",
+      "logicSummary": "Contains 12 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub txtTerms_KeyDown(ByVal KeyCode As Integer,ByVal  Shift As Integer)",
+      "logicSummary": "Contains 4 lines of code. SQL: "
+    },
+    {
+      "name": "Private Function StartCalcFormula(Optional ByVal ShowPromptScreen As Boolean = False) As Boolean",
+      "logicSummary": "Contains 55 lines of code. SQL: "
+    },
+    {
+      "name": "Public Function CalcButtonStatus(ByVal FrmObj As Form,ByVal  Enable As Boolean) As Boolean",
+      "logicSummary": "Contains 17 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub cmdCalc_Click()",
+      "logicSummary": "Contains 16 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub SetSprGoodsValue(ByVal fRow As Long)",
+      "logicSummary": "Contains 21 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub SetTotalGoodsValue()",
+      "logicSummary": "Contains 3 lines of code. SQL: "
+    },
+    {
+      "name": "Private Function SprTotCalc(ByRef fSpread As AceSpread,ByVal  fCol As Long) As Double",
+      "logicSummary": "Contains 18 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub Design_spItem(ByVal FormPath As String,ByRef  SourceSpread As AceSpread,ByVal  SpreadIndex As String)",
+      "logicSummary": "Contains 7 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub Design_sprCalc(ByVal FormPath As String,ByRef  SourceSpread As AceSpread,ByVal  SpreadIndex As String)",
+      "logicSummary": "Contains 2 lines of code. SQL: "
+    },
+    {
+      "name": "Private Sub InitializeSpreads()",
+      "logicSummary": "Contains 5 lines of code. SQL: "
+    }
+  ],
+  "databaseOperations": [
+    {
+      "query": "sql = \" select a.FormCode,(select b.Description from TERMSMASTER b where \""
+    },
+    {
+      "query": "sql = sql + \" and b.Compid=a.Compid) FormDesc, a.PackingCode,(select b1.Description \""
+    },
+    {
+      "query": "sql = sql + \" and b1.Compid=a.Compid) PackingDesc,a.DeliveryCode,(select b2.Description \""
+    },
+    {
+      "query": "sql = sql + \" and b2.Compid=a.Compid) DeliveryDesc,a.PaymentCode,(select b3.Description \""
+    },
+    {
+      "query": "sql = sql + \" and b3.Compid=a.Compid) PaymentDesc,a.InsuranceCode,(select \""
+    },
+    {
+      "query": "sql = sql + \" and b4.Compid=a.Compid) InsuranceDesc,a.ModeCode,(select \""
+    },
+    {
+      "query": "sql = sql + \" and b5.Compid=a.Compid) ModeDesc,a.Freightcode,(select b6.Description \""
+    },
+    {
+      "query": "sql = \"select a.ItemCode,a.ItemDescription,a.UOM,a.Qty,a.Rate,a.AssessableRate from \""
+    },
+    {
+      "query": "sql = \"insert into COM_FormulaCalc_Hdr select '\" & Trim$(cmbQuoType) & \"' DocType,\" & Val(txtQuoNo) & \" DocNo,\""
+    },
+    {
+      "query": "sql = \"Insert into COM_FormulaCalc_Dtl\""
+    },
+    {
+      "query": "sql = sql & \" Select '\" & Trim$(cmbQuoType) & \"', \" & Val(txtQuoNo) & \", '\" & Format(dpQuoDate, \"yyyy-MM-dd\") & \"',\""
+    },
+    {
+      "query": "sql = \"select distinct a.ItemCode,c.ItemDescription,a.PartNo,c.UOM,c.UOMDesc,c.UOMDecimal,a.Rate,a.AssessableRate,a.FormulaCode,\""
+    },
+    {
+      "query": "sql = sql + \"(select top 1 b.FrmLName from COM_FormulaMast_Hdr b where b.ModuleCode = \" & gModuleCode & \" and b.FrmID=a.FormulaCode\""
+    },
+    {
+      "query": "sql = \"select distinct (select b.PartyName from FAS_PARTY_MASTER b where b.PartyCode=a.CustomerCode and b.Branchid=a.Branchid\""
+    },
+    {
+      "query": "sql = \"select Description,Code from TERMSMASTER where typeflg = 'Delivery Instruction' \""
+    },
+    {
+      "query": "sql = \"select description,Code from TERMSMASTER where typeflg = 'Form' \""
+    },
+    {
+      "query": "sql = \"Select FrmLName, FrmID from COM_FORMULAMAST_HDR\""
+    },
+    {
+      "query": "sql = \"select description,Code from TERMSMASTER where typeflg = 'Freight' \""
+    },
+    {
+      "query": "sql = \"select description,Code from TERMSMASTER where typeflg = 'Insurance'\""
+    },
+    {
+      "query": "sql = \"select description,Code from TERMSMASTER where typeflg = 'Mode' \""
+    },
+    {
+      "query": "sql = \"select description,Code from TERMSMASTER where typeflg = 'Packing & Forwarding' \""
+    },
+    {
+      "query": "sql = \"select description,Code from TERMSMASTER where typeflg = 'Payment Terms' \""
+    },
+    {
+      "query": "sql = \" select distinct a.EnquiryType,a.EnquiryNo,a.EnquiryDate,a.CustomerCode,a.CustomerName\""
+    }
+  ],
+  "transactionHandling": [],
+  "businessRules": [],
+  "validations": [],
+  "calculations": [],
+  "conditions": [],
+  "databaseObjects": {
+    "directTables": [],
+    "storedProcedures": [],
+    "sqlFunctions": [],
+    "indirectTables": []
+  },
+  "formDependencies": [],
+  "globalHelpers": [],
+  "externalDependencies": [],
+  "messages": [],
+  "variables": [],
+  "globalVariables": [],
+  "constants": [],
+  "errorHandling": [],
+  "sourceReferences": [],
+  "uiStateTransitions": {},
+  "unknowns": []
+}

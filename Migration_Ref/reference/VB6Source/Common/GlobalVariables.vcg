@@ -1,0 +1,192 @@
+Attribute VB_Name = "GlobalVariables"
+Option Explicit
+
+'=================
+' Public Declares
+'=================
+    Public Declare Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringA" (ByVal lpApplicationName As String, ByVal lpKeyName As Any, ByVal lpDefault As String, ByVal lpReturnedString As String, ByVal nSize As Long, ByVal lpFileName As String) As Long
+
+'==================
+' Public Variables
+'==================
+    Public db As New AceADODB.Connection
+    Public gTransactionCount As Long    'To Track Transaction Count
+    Public CreateRev As Boolean
+    Public mServer As String
+    Public mDBase As String
+    
+    'For Print Reports
+'    Public iFile As Integer
+'    Public iPageWidth As Integer
+'    Public iPageNo As Integer
+'    Public iLineNo As Integer
+'    Public Orient As Integer
+'    Public pheight As Integer
+'    Public pPaper As String
+    Public strFilename As String
+'    Public gStrReportHeading As String
+'    Public gStrLoginUserName As String
+    Public frmOutput As Form
+    Public frmCurrent As Form
+    Public FindStaus As Boolean
+
+    Public Cadd1 As String    'Company Address
+    Public Cadd2 As String    'Company Address 2
+    Public Ccity As String    'Company Address City
+    Public Cpincode As String 'Company Address Pincode
+    Public IsGSTRequired As Boolean   ' For GST
+    Public gGSTStartDate As Date
+
+    Public IsReqIncomingInsMultipleReadingForSingleParameter As Boolean  ' For Parameterwise Multiple No of Reading enter in Inspection Master
+    Public IsReqFinalInsMultipleReadingForSingleParameter As Boolean  ' For Parameterwise Multiple No of Reading enter in Inspection Master
+    Public IsReqPatrolInsMultipleReadingForSingleParameter As Boolean  ' For Parameterwise Multiple No of Reading enter in Inspection Master
+    Public IsReqReInsMultipleReadingForSingleParameter As Boolean  ' For Parameterwise Multiple No of Reading enter in Inspection Master
+
+    'Variables for All Modules Function
+    Public gServer As String
+    Public gDatabase As String
+    Public gBranchID As String
+    Public gCompID As String
+    Public gUserID As String
+    Public gFinyear  As String
+    Public gCompName As String
+    Public gBranchName As String
+    Public gFasCompCode As String
+    Public gReportID As String
+    Public gRptHeading1 As String
+    Public gRptHeading2 As String
+    Public gPrHeight As Integer   'Paper height
+    Public gJobName As String
+    
+    Public MDIFrm As Form
+    Public IsMDIFormExit As Boolean
+    Public gVerticalID As eVerticalID
+    Public gBaseModuleCode As Integer
+    Public gBaseVerticalID As eVerticalID
+    Public ProcessArray() As Integer
+    
+    Public spHeight As Integer  'PaperHeight For SpreadFormat
+    Public spOrient As Integer  'Orient For SpreadFormat
+    Public gSpHeight As Integer
+    
+    Public FinStart As Date   'Financial Year Start
+    Public FinEnd As Date     'Financial Year End
+    
+    Public getvalue() As Variant  'For get Results from Help Form
+    Public WSplit() As String   'Required for Wordsplit Function
+    
+    
+    'For Modules List Menu & Exe Name - Required fro ModuleMenuLoad, ModuleSecurity etc..
+Public      ModuleList() As String       '2 Dimensional Array - 1st one for Name in UserRights
+Public  2nd one for Exe Name with path
+
+    
+    Public gStdDocHistoryScreen As Boolean
+    
+'    Public TimeCnt As Integer 'For AutoClose Function
+    Public Enum eOptions
+      oMaintainBillsTrading = 1
+      oMaintainBillsNonTrading = 2
+      oMaintainCostCentre = 3
+      oMaintianMultiCostCategory = 4
+      oIsGSTRequired = 5
+      oIsReqIncomingInsMultipleReadingForSingleParameter = 6
+      oIsReqFinalInsMultipleReadingForSingleParameter = 7
+      oIsReqPatrolInsMultipleReadingForSingleParameter = 8
+      oIsReqReInsMultipleReadingForSingleParameter = 9
+    End Enum
+    
+  Public Enum eMdlCode      'Module Code
+    mACE = 1
+    mBOM = 2
+    mINV = 3
+    mSAL = 4
+    mPPC = 5
+    mRec = 6
+    mQC = 7
+    mMAINT = 8
+    mPUR = 9
+    mPAY = 10
+    mHRD = 11
+    mFAS = 12
+    mFAM = 13
+    mPPAP = 14
+    mQMS = 15
+  End Enum
+  
+  Public Enum eVerticalID
+    mESC = -1               'E-mail & SMS Communication
+    mVertNone = 0
+    mACE = 1
+    mBOM = 2
+    mGS = 3
+    mNBD = 4
+    mSAL = 5
+    mCI = 6
+    mPPC = 7
+    mRS = 8
+    mTM = 9
+    mQC = 10
+    mQL = 11
+    mFQ = 12
+    mMAINT = 13
+    mPUR = 14
+    mSQI = 15
+    mSC = 16
+    mSER = 17
+    mPAY = 18
+    mHRD = 19
+    mFAS = 20
+    mFAM = 21
+    mPPAP = 22
+    mQMS = 23
+    mMIS = 24
+    mSAS = 25
+    mKRA = 26
+    mEPS = 27
+    mCell = 28
+    mHRMS = 29
+    mSysAdmin = 30
+    mMD = 31
+    mIOT = 32
+  End Enum
+
+  Public Enum eReportID
+    mINFANT = 1
+    mUNICORN = 2
+    mDWARAKA = 3
+    mPMI = 4
+    mKUS = 5
+    mUMT = 6
+  End Enum
+    
+  Public Enum eTranType
+    mCreate = 1
+    mModify = 2
+    mAuthorised = 3
+    mAmendment = 4
+    mShortClose = 5
+  End Enum
+
+  Public Enum eStdType
+    mOpration = 1
+    mInspection = 2
+    mProcess = 3
+    mMaterial = 4
+    mTool = 5
+    MSetupStd = 6
+    mSOP = 7
+    mPacking = 8
+    mrptProcessflow = 9
+    mrptControlplan = 10
+    mrptPFMEA = 11
+  End Enum
+  
+  Public Enum eUserOptions
+    mPageHight = 1
+  End Enum
+  
+  Public Enum ePaper 'Page Height
+    mPaperA4 = 63  'For A4 Sheet
+    mPaper80Col = 75 'For 80 Col Paper
+  End Enum

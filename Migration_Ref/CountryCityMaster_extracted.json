@@ -1,0 +1,237 @@
+{
+  "formMetadata": {
+    "name": "frmCountryCityMaster",
+    "caption": "Country / City Master",
+    "windowState": "Maximized",
+    "mdiChild": true
+  },
+  "controls": [
+    {
+      "name": "cmbType",
+      "type": "ComboBox",
+      "style": "Dropdown List",
+      "items": ["Country", "City"],
+      "toolTip": "Select the Country or City",
+      "required": true
+    },
+    {
+      "name": "txtCountry",
+      "type": "TextBox",
+      "maxLength": 50,
+      "toolTip": "Enter the Country. Press F2 or Double Click for Help",
+      "required": true,
+      "usage": "Stores Country Name. Tag stores CountryCode."
+    },
+    {
+      "name": "txtCity",
+      "type": "TextBox",
+      "maxLength": 50,
+      "toolTip": "Enter the City. Press F2 or Double Click for Help",
+      "enabled": false,
+      "required": true,
+      "usage": "Stores City Name. Tag stores CityCode (which maps to CountryCode in DB with ParentCode > 0)."
+    },
+    {
+      "name": "txtCode",
+      "type": "TextBox",
+      "maxLength": 10,
+      "visible": false,
+      "usage": "Not actively used for saving, just defined in UI."
+    },
+    {
+      "name": "cmdSave",
+      "type": "CommandButton",
+      "caption": "&Save",
+      "enabled": false
+    },
+    {
+      "name": "cmdClear",
+      "type": "CommandButton",
+      "caption": "&Clear"
+    },
+    {
+      "name": "cmdExit",
+      "type": "CommandButton",
+      "caption": "E&xit"
+    }
+  ],
+  "dataBindings": [
+    {
+      "control": "cmbType",
+      "source": "CountryCityMaster.frx",
+      "type": "frx"
+    },
+    {
+      "control": "txtCountry",
+      "source": "FetchValue_New",
+      "query": "Select CountryName,CountryCode From COM_CountryCity_Master where ParentCode=0",
+      "type": "lookup"
+    },
+    {
+      "control": "txtCity",
+      "source": "FetchValue_New",
+      "query": "Select CountryName,CountryCode From COM_CountryCity_Master where ParentCode=Val(txtCountry.Tag)",
+      "type": "lookup"
+    }
+  ],
+  "events": [
+    {
+      "name": "CmdClear_Click",
+      "description": "Clears form inputs and resets states."
+    },
+    {
+      "name": "cmbType_Click",
+      "description": "Toggles visibility and enabled states of txtCity and txtCountry based on selected type."
+    },
+    {
+      "name": "cmdSave_Click",
+      "description": "Validates, checks duplicates, starts transaction, executes SP for insert/update, and commits."
+    },
+    {
+      "name": "txtCountry_DblClick",
+      "description": "Opens lookup to select existing country."
+    },
+    {
+      "name": "txtCity_DblClick",
+      "description": "Opens lookup to select existing city under the selected country."
+    },
+    {
+      "name": "CheckSave",
+      "description": "Enables/Disables save button based on input states."
+    }
+  ],
+  "procedures": [
+    {
+      "name": "ValidateData",
+      "type": "Function",
+      "scope": "Private",
+      "description": "Checks if required fields are filled based on cmbType selection."
+    }
+  ],
+  "databaseOperations": [
+    {
+      "triggerEvent": "txtCountry_DblClick",
+      "type": "SELECT",
+      "tables": ["COM_CountryCity_Master"],
+      "columnsSelected": ["CountryName", "CountryCode"],
+      "whereConditions": "ParentCode=0"
+    },
+    {
+      "triggerEvent": "txtCity_DblClick",
+      "type": "SELECT",
+      "tables": ["COM_CountryCity_Master"],
+      "columnsSelected": ["CountryName", "CountryCode"],
+      "whereConditions": "ParentCode=Val(txtCountry.Tag)"
+    },
+    {
+      "triggerEvent": "cmdSave_Click",
+      "type": "SELECT",
+      "tables": ["COM_CountryCity_Master"],
+      "columnsSelected": ["CountryName"],
+      "whereConditions": "ParentCode=0 and CountryName = '...'",
+      "description": "Check duplicate country on insert"
+    },
+    {
+      "triggerEvent": "cmdSave_Click",
+      "type": "SELECT",
+      "tables": ["COM_CountryCity_Master"],
+      "columnsSelected": ["CountryName"],
+      "whereConditions": "ParentCode=... and CountryCode=... and CountryName = '...'",
+      "description": "Check duplicate city on insert"
+    },
+    {
+      "triggerEvent": "cmdSave_Click",
+      "type": "SELECT",
+      "tables": ["COM_CountryCity_Master"],
+      "columnsSelected": ["isNull(Max(CountryCode), 0)+1"],
+      "whereConditions": "ParentCode = 0",
+      "description": "Get new CountryCode on insert. (Note: Only used for fetching snap('CountryCode') to pass to SP)"
+    },
+    {
+      "triggerEvent": "cmdSave_Click",
+      "type": "EXECUTE",
+      "storedProcedure": "COM_Ins_CountryCity_Master",
+      "description": "Inserts new country/city"
+    },
+    {
+      "triggerEvent": "cmdSave_Click",
+      "type": "EXECUTE",
+      "storedProcedure": "COM_Up_CountryCity_Master",
+      "description": "Updates existing country/city"
+    }
+  ],
+  "transactionHandling": [
+    "DBStartTransaction",
+    "DBCommitTransaction",
+    "DBRollBackWithMessage"
+  ],
+  "businessRules": [
+    {
+      "name": "Type Toggle Logic",
+      "description": "If cmbType is 'Country', txtCity is disabled and cleared. If 'City', txtCity is enabled. txtCountry is locked if 'City', but wait, the logic says if 'Country', txtCountry.Locked = False, if 'City', lblCity.Enabled = True, txtCity.Enabled = True, txtCountry.Locked = True."
+    },
+    {
+      "name": "City Creation Dependency",
+      "description": "Cannot create a City unless a Country is already selected (Val(txtCountry.Tag) > 0)."
+    }
+  ],
+  "validations": [
+    {
+      "field": "txtCountry",
+      "rule": "Cannot be empty",
+      "message": "Enter the Country Name (or City Name based on type)"
+    }
+  ],
+  "calculations": [],
+  "conditions": [
+    {
+      "condition": "Val(txtCountry.Tag) > 0",
+      "result": "Considered an Update operation if Country Type, else if City Type requires both Val(txtCountry.Tag)>0 and Val(txtCity.Tag)>0 to be an Update."
+    }
+  ],
+  "databaseObjects": {
+    "directTables": ["COM_CountryCity_Master"],
+    "storedProcedures": ["COM_Ins_CountryCity_Master", "COM_Up_CountryCity_Master"],
+    "sqlFunctions": [],
+    "indirectTables": []
+  },
+  "formDependencies": [],
+  "globalHelpers": [
+    "Form_Clear",
+    "ErrMsgShow",
+    "sShowMessage",
+    "DBStartTransaction",
+    "DBCommitTransaction",
+    "DBRollBackWithMessage",
+    "RSOpen",
+    "commClear",
+    "FormExit",
+    "FetchValue_New",
+    "getvalue"
+  ],
+  "externalDependencies": ["AceADODB"],
+  "messages": [
+    "Enter the Country Name",
+    "Enter the City Name",
+    "You can create City only for already created Country",
+    "Duplicate Description Not allowed",
+    "Record Saved",
+    "Record Updated",
+    "Please Select the Country."
+  ],
+  "variables": [],
+  "globalVariables": ["gUserID"],
+  "constants": [],
+  "errorHandling": [
+    "Try/Catch block in CmdClear_Click",
+    "GoTo ExitHere in cmdSave_Click"
+  ],
+  "sourceReferences": [
+    {
+      "type": "Form",
+      "name": "CountryCityMaster.frm"
+    }
+  ],
+  "uiStateTransitions": {},
+  "unknowns": []
+}

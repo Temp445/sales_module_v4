@@ -1,0 +1,353 @@
+{
+  "controls": [
+    {
+      "type": "VB.Form",
+      "name": "frmSalesEnquiry",
+      "props": {
+        "Caption": "\"Sales Enquiry\"",
+        "ClientHeight": "3915",
+        "ClientLeft": "240",
+        "ClientTop": "1545",
+        "ClientWidth": "6585",
+        "Name": "\"Arial\"",
+        "Size": "8.25",
+        "Charset": "0",
+        "Weight": "400",
+        "Underline": "0   'False",
+        "Italic": "0   'False",
+        "Strikethrough": "0   'False"
+      }
+    },
+    {
+      "type": "VB.CommandButton",
+      "name": "cmdExit",
+      "props": {
+        "Caption": "\"&Exit\"",
+        "Height": "400",
+        "Left": "6435",
+        "Style": "1  'Graphical",
+        "TabIndex": "20",
+        "ToolTipText": "\"Click to Exit from the Current Screen\"",
+        "Top": "4245",
+        "Width": "1300"
+      }
+    },
+    {
+      "type": "VB.CommandButton",
+      "name": "cmdClear",
+      "props": {
+        "Caption": "\"&Clear\"",
+        "Height": "400",
+        "Left": "5145",
+        "TabIndex": "19",
+        "ToolTipText": "\"Click to Clear the Data\"",
+        "Top": "4245",
+        "Width": "1300"
+      }
+    },
+    {
+      "type": "VB.CommandButton",
+      "name": "cmdSave",
+      "props": {
+        "Caption": "\"&Save\"",
+        "Height": "400",
+        "Left": "3855",
+        "Style": "1  'Graphical",
+        "TabIndex": "18",
+        "ToolTipText": "\"Click to Save the Data\"",
+        "Top": "4245",
+        "Width": "1300"
+      }
+    },
+    {
+      "type": "VB.Frame",
+      "name": "FraEnq",
+      "props": {
+        "Name": "\"MS Sans Serif\"",
+        "Size": "8.25",
+        "Charset": "0",
+        "Weight": "400",
+        "Underline": "0   'False",
+        "Italic": "0   'False",
+        "Strikethrough": "0   'False"
+      }
+    },
+    {
+      "type": "VB.ComboBox",
+      "name": "cmbCustomerType",
+      "props": {
+        "Height": "330",
+        "ItemData": "\"SalesEnquiry.frx\":0000",
+        "Left": "5835",
+        "List": "\"SalesEnquiry.frx\":000A",
+        "Style": "2  'Dropdown List",
+        "TabIndex": "11",
+        "ToolTipText": "\"Select the Customer Type\"",
+        "Top": "315",
+        "Width": "1725"
+      }
+    },
+    {
+      "type": "VB.CommandButton",
+      "name": "cmdOK",
+      "props": {
+        "Caption": "\"&OK\"",
+        "Height": "315",
+        "Left": "8670",
+        "TabIndex": "16",
+        "ToolTipText": "\"Click to OK\"",
+        "Top": "885",
+        "Width": "495"
+      }
+    },
+    {
+      "type": "VB.ComboBox",
+      "name": "cmbEnqType",
+      "props": {
+        "Height": "330",
+        "Left": "105",
+        "Style": "2  'Dropdown List",
+        "TabIndex": "1",
+        "ToolTipText": "\"Select the Sales Enquiry Type\"",
+        "Top": "330",
+        "Width": "975"
+      }
+    },
+    {
+      "type": "VB.TextBox",
+      "name": "txtRemarks",
+      "props": {
+        "Appearance": "0  'Flat",
+        "Height": "315",
+        "Left": "4725",
+        "MaxLength": "50",
+        "TabIndex": "15",
+        "ToolTipText": "\"Enter the Remarks\"",
+        "Top": "885",
+        "Width": "3915"
+      }
+    },
+    {
+      "type": "VB.TextBox",
+      "name": "txtCustomer",
+      "props": {
+        "Appearance": "0  'Flat",
+        "Height": "315",
+        "Left": "105",
+        "MaxLength": "50",
+        "TabIndex": "13",
+        "ToolTipText": "\"Select the Customer. Press F2 or Double Click for Help.\"",
+        "Top": "885",
+        "Width": "4605"
+      }
+    },
+    {
+      "type": "VB.TextBox",
+      "name": "txtEnqNo",
+      "props": {
+        "Alignment": "1  'Right Justify",
+        "Appearance": "0  'Flat",
+        "Enabled": "0   'False",
+        "Height": "315",
+        "Left": "1095",
+        "Locked": "-1  'True",
+        "MaxLength": "7",
+        "TabIndex": "3",
+        "ToolTipText": "\"Sales Enquiry No\"",
+        "Top": "330",
+        "Width": "795"
+      }
+    },
+    {
+      "type": "VB.TextBox",
+      "name": "txtRefNo",
+      "props": {
+        "Appearance": "0  'Flat",
+        "Height": "315",
+        "Left": "3150",
+        "MaxLength": "15",
+        "TabIndex": "7",
+        "ToolTipText": "\"Enter the Ref. No\"",
+        "Top": "330",
+        "Width": "1425"
+      }
+    },
+    {
+      "type": "MSComCtl2.DTPicker",
+      "name": "dtpEnqDate",
+      "props": {
+        "Height": "315",
+        "Left": "1905",
+        "TabIndex": "5",
+        "ToolTipText": "\"Sales Enquiry Date\"",
+        "Top": "330",
+        "Width": "1245",
+        "_ExtentX": "2196",
+        "_ExtentY": "556",
+        "_Version": "393216",
+        "Enabled": "0   'False",
+        "Format": "67436545",
+        "CurrentDate": "37258"
+      }
+    },
+    {
+      "type": "MSComCtl2.DTPicker",
+      "name": "dtpRefDate",
+      "props": {
+        "Height": "315",
+        "Left": "4590",
+        "TabIndex": "9",
+        "ToolTipText": "\"Enter the Ref. Date\"",
+        "Top": "330",
+        "Width": "1245",
+        "_ExtentX": "2196",
+        "_ExtentY": "556",
+        "_Version": "393216",
+        "Format": "67436545",
+        "CurrentDate": "37258"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label9",
+      "props": {
+        "AutoSize": "-1  'True",
+        "BackStyle": "0  'Transparent",
+        "Caption": "\"Customer Type\"",
+        "Height": "210",
+        "Left": "5835",
+        "TabIndex": "10",
+        "Top": "135",
+        "Width": "1095"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label8",
+      "props": {
+        "AutoSize": "-1  'True",
+        "BackStyle": "0  'Transparent",
+        "Caption": "\"Ref. Date\"",
+        "Height": "210",
+        "Left": "4590",
+        "TabIndex": "8",
+        "Top": "150",
+        "Width": "675"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label7",
+      "props": {
+        "AutoSize": "-1  'True",
+        "BackStyle": "0  'Transparent",
+        "Caption": "\"Ref. No.\"",
+        "Height": "210",
+        "Left": "3150",
+        "TabIndex": "6",
+        "Top": "150",
+        "Width": "585"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label6",
+      "props": {
+        "AutoSize": "-1  'True",
+        "BackStyle": "0  'Transparent",
+        "Caption": "\"Enq.Date\"",
+        "ForeColor": "&H00000080&",
+        "Height": "210",
+        "Left": "1905",
+        "TabIndex": "4",
+        "Top": "150",
+        "Width": "645"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label5",
+      "props": {
+        "AutoSize": "-1  'True",
+        "Caption": "\"Enq.No.\"",
+        "ForeColor": "&H00000080&",
+        "Height": "210",
+        "Left": "1095",
+        "TabIndex": "2",
+        "Top": "135",
+        "Width": "555"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label3",
+      "props": {
+        "Caption": "\"Remarks\"",
+        "Height": "195",
+        "Left": "4725",
+        "TabIndex": "14",
+        "Top": "705",
+        "Width": "705"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label1",
+      "props": {
+        "AutoSize": "-1  'True",
+        "BackColor": "&H80000000&",
+        "BackStyle": "0  'Transparent",
+        "Caption": "\"Enq.Type\"",
+        "ForeColor": "&H80000008&",
+        "Height": "210",
+        "Left": "105",
+        "TabIndex": "0",
+        "Top": "135",
+        "Width": "945",
+        "WordWrap": "-1  'True"
+      }
+    },
+    {
+      "type": "VB.Label",
+      "name": "Label2",
+      "props": {
+        "AutoSize": "-1  'True",
+        "BackColor": "&H80000000&",
+        "BackStyle": "0  'Transparent",
+        "Caption": "\"Customer\"",
+        "ForeColor": "&H00FF0000&",
+        "Height": "210",
+        "Left": "105",
+        "TabIndex": "12",
+        "Top": "705",
+        "Width": "720",
+        "WordWrap": "-1  'True"
+      }
+    },
+    {
+      "type": "AceSpread",
+      "name": "spItem",
+      "props": {
+        "Height": "1995",
+        "Left": "525",
+        "TabIndex": "17",
+        "ToolTipText": "\"Enter the Sales Item Details\"",
+        "Top": "2115",
+        "Width": "10890",
+        "_Version": "458752",
+        "_ExtentX": "19209",
+        "_ExtentY": "3519",
+        "_StockProps": "64",
+        "EditEnterAction": "5",
+        "EditModeReplace": "-1  'True",
+        "Name": "\"Arial\"",
+        "Size": "8.25",
+        "Charset": "0",
+        "Weight": "400",
+        "Underline": "0   'False",
+        "Italic": "0   'False",
+        "Strikethrough": "0   'False"
+      }
+    }
+  ]
+}

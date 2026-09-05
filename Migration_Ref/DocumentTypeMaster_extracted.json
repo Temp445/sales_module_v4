@@ -1,0 +1,137 @@
+{
+  "formMetadata": {
+    "name": "frmDocumentTypeMaster",
+    "caption": "Document Type Master",
+    "windowState": "Maximized",
+    "mdiChild": true
+  },
+  "controls": [
+    {
+      "name": "cmbPertaining",
+      "type": "ComboBox",
+      "style": "Dropdown List",
+      "items": [
+        "Sales Enquiry",
+        "Jobwork Enquiry",
+        "Sales Quotation",
+        "Jobwork Quotation",
+        "Customer PO Entry",
+        "Sales Order",
+        "Jobwork Order",
+        "Schedule Entry",
+        "Inventory Schedule Entry",
+        "Weekly Plan",
+        "Sales Order Amendment",
+        "Jobwork Order Amendment",
+        "Delivery Challan",
+        "Sales Invoice",
+        "Sales Plan Yearly",
+        "Sales Plan Monthly",
+        "Sales Plan Weekly",
+        "Sales Plan Daily",
+        "Contract Review",
+        "Downstream Document"
+      ],
+      "toolTip": "Select the Pertaining To",
+      "required": false
+    },
+    {
+      "name": "txttype",
+      "type": "TextBox",
+      "maxLength": 3,
+      "toolTip": "Enter the Document Type",
+      "required": true,
+      "casing": "upper"
+    },
+    {
+      "name": "txtdesc",
+      "type": "TextBox",
+      "maxLength": 30,
+      "toolTip": "Enter the Document Description",
+      "required": true,
+      "casing": "upper"
+    },
+    {
+      "name": "txtstart",
+      "type": "TextBox",
+      "maxLength": 5,
+      "toolTip": "Enter Starting No",
+      "required": true,
+      "numericOnly": true
+    },
+    {
+      "name": "cmdSave",
+      "type": "CommandButton",
+      "caption": "&Save"
+    },
+    {
+      "name": "cmdClear",
+      "type": "CommandButton",
+      "caption": "&Clear"
+    },
+    {
+      "name": "cmdexit",
+      "type": "CommandButton",
+      "caption": "E&xit"
+    },
+    {
+      "name": "sprdoctype",
+      "type": "AceSpread",
+      "description": "Grid showing existing document types",
+      "columns": [
+        "DocumentType",
+        "Description",
+        "StartingNo",
+        "PertainingTo"
+      ]
+    }
+  ],
+  "databaseOperations": [
+    {
+      "triggerEvent": "LoadSpr",
+      "type": "SELECT",
+      "tables": ["COM_DOCUMENTTYPE_MASTER"],
+      "columnsSelected": ["DocumentType", "Description", "StartingNo", "PertainingTo"],
+      "whereConditions": "Branchid=gBranchID and Compid=gCompID and ModuleName='SAL'"
+    },
+    {
+      "triggerEvent": "cmdSave_Click",
+      "type": "EXECUTE",
+      "storedProcedure": "COM_INS_DOCUMENTTYPE_MASTER",
+      "parameters": [
+        "DocumentType (adChar, 3)",
+        "Description (adVarChar, 30)",
+        "StartingNo (adInteger)",
+        "PertainingTo (adVarChar, 3) - mapped from PerToName_Code",
+        "Module ('SAL')",
+        "Status (True)",
+        "Common parameters (@Userid, @Branchid, @Compid)"
+      ]
+    },
+    {
+      "triggerEvent": "cmdSave_Click",
+      "type": "SELECT",
+      "description": "Validation check for existing DocumentType",
+      "tables": ["COM_DOCUMENTTYPE_MASTER"],
+      "whereConditions": "DocumentType = txtType and Branchid=gBranchID and Compid=gCompID"
+    }
+  ],
+  "businessRules": [
+    {
+      "name": "PertainingTo Code Mapping",
+      "description": "Maps the UI text selection in cmbPertaining to a specific 1-2 letter code (e.g., 'Sales Enquiry' -> 'E') via PerToName_Code before saving. Vice versa when loading."
+    },
+    {
+      "name": "Validation",
+      "description": "txtType, txtdesc, txtstart cannot be empty. Must check if DocumentType already exists for current branch/company."
+    },
+    {
+      "name": "Casing",
+      "description": "txtType and txtdesc are converted to uppercase on KeyPress."
+    },
+    {
+      "name": "Numeric Check",
+      "description": "txtstart only allows numbers."
+    }
+  ]
+}

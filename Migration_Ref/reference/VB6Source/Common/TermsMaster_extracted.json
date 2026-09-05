@@ -1,0 +1,135 @@
+{
+  "formMetadata": {
+    "name": "frmTermsMaster",
+    "caption": "Terms Master",
+    "windowState": "Maximized",
+    "mdiChild": true
+  },
+  "controls": [
+    {
+      "name": "cmbTerms",
+      "type": "ComboBox",
+      "style": "Dropdown List",
+      "items": [
+        "Form",
+        "Packing & Forwarding",
+        "Delivery Instruction",
+        "Insurance",
+        "Freight",
+        "Mode",
+        "Payment Terms",
+        "Contract Review"
+      ],
+      "toolTip": "Select the Term",
+      "required": true
+    },
+    {
+      "name": "cmbStatus",
+      "type": "ComboBox",
+      "style": "Dropdown List",
+      "items": ["Active", "Inactive"],
+      "enabled": false,
+      "default": "Active"
+    },
+    {
+      "name": "tbDesc",
+      "type": "TextBox",
+      "maxLength": 100,
+      "toolTip": "Enter the Description. Press F2 or Double Click for Help.",
+      "required": true,
+      "casing": "upper",
+      "usage": "Stores Description. Tag stores Code (primary key)."
+    },
+    {
+      "name": "cbsave",
+      "type": "CommandButton",
+      "caption": "&Save"
+    },
+    {
+      "name": "cbclear",
+      "type": "CommandButton",
+      "caption": "&Clear"
+    },
+    {
+      "name": "cbexit",
+      "type": "CommandButton",
+      "caption": "E&xit"
+    }
+  ],
+  "dataBindings": [
+    {
+      "control": "cmbTerms",
+      "source": "TermsMaster.frx",
+      "type": "frx"
+    },
+    {
+      "control": "cmbStatus",
+      "source": "TermsMaster.frx",
+      "type": "frx"
+    },
+    {
+      "control": "tbDesc",
+      "source": "FetchValue_New",
+      "query": "Select Code,description, Status from TERMSMASTER where typeflg = cmbTerms and Branchid=gBranchID and Compid=gCompID",
+      "type": "lookup"
+    }
+  ],
+  "databaseOperations": [
+    {
+      "triggerEvent": "cmbTerms_Click",
+      "type": "SELECT",
+      "tables": ["TERMSMASTER"],
+      "columnsSelected": ["isnull(max(convert(int,Code)),0)"],
+      "whereConditions": "TypeFlg = cmbTerms",
+      "description": "Auto-generates the next sequential Code for the selected Term."
+    },
+    {
+      "triggerEvent": "cbsave_Click",
+      "type": "SELECT",
+      "description": "Validation check for existing Description",
+      "tables": ["TERMSMASTER"],
+      "whereConditions": "typeflg = cmbTerms and Description = tbDesc and Branchid=gBranchID and Compid=gCompID"
+    },
+    {
+      "triggerEvent": "cbsave_Click",
+      "type": "SELECT",
+      "description": "Check if record exists for update or insert",
+      "tables": ["TERMSMASTER"],
+      "whereConditions": "typeflg = cmbTerms and Code = tbDesc.Tag and Branchid=gBranchID and Compid=gCompID"
+    },
+    {
+      "triggerEvent": "cbsave_Click",
+      "type": "EXECUTE",
+      "storedProcedure": "insTERMSMASTER",
+      "parameters": [
+        "TypeFlg (adChar, 50)",
+        "Code (adVarChar, 6)",
+        "Description (adVarChar, 100)",
+        "Status (adBoolean)",
+        "Common parameters (@Userid, @Branchid, @Compid)"
+      ]
+    },
+    {
+      "triggerEvent": "cbsave_Click",
+      "type": "EXECUTE",
+      "storedProcedure": "upTERMSMASTER",
+      "parameters": [
+        "TypeFlg", "Code", "Description", "Status"
+      ]
+    }
+  ],
+  "businessRules": [
+    {
+      "name": "Auto Code Generation",
+      "description": "When a term type is selected from cmbTerms, tbDesc.Tag (the underlying Code) is auto-populated with Max(Code) + 1 for that TypeFlg."
+    },
+    {
+      "name": "Validation",
+      "description": "Description cannot be empty. Duplicate descriptions under the same TypeFlg, Branch, and Company are not allowed."
+    },
+    {
+      "name": "Casing",
+      "description": "tbDesc is converted to uppercase on KeyPress."
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "formMetadata": {
+    "name": "frmPartyMaster",
+    "caption": "Party Master",
+    "windowState": "Maximized",
+    "mdiChild": true
+  },
+  "controls": [
+    {
+      "name": "cmbAcType",
+      "type": "ComboBox",
+      "items": ["Creditor", "Debtor", "Party"],
+      "usage": "Select Account Type (triggers VendorCode prefix generation)"
+    },
+    {
+      "name": "tbPartyName",
+      "type": "TextBox",
+      "maxLength": 100,
+      "usage": "Account Name. Tag stores PartyCode."
+    },
+    {
+      "name": "txtVendorCode",
+      "type": "TextBox",
+      "usage": "Auto-generated Vendor/Customer Code"
+    },
+    {
+      "name": "cmbStatus",
+      "type": "ComboBox",
+      "items": ["Active", "Inactive"],
+      "usage": "EffStatus"
+    },
+    {
+      "name": "fraAddress",
+      "type": "Frame",
+      "controls": [
+        {"name": "tbAdd1", "type": "TextBox"},
+        {"name": "tbAdd2", "type": "TextBox"},
+        {"name": "tbAdd3", "type": "TextBox"},
+        {"name": "txtCountry", "type": "TextBox", "usage": "FAS_PartyMaster_Hlp_Country lookup"},
+        {"name": "txtState", "type": "TextBox", "usage": "FAS_PartyMaster_Hlp_State lookup"},
+        {"name": "tbCity", "type": "TextBox", "usage": "FAS_PartyMaster_Hlp_City lookup"},
+        {"name": "tbPin", "type": "TextBox"},
+        {"name": "tbPhone", "type": "TextBox"},
+        {"name": "tbFax", "type": "TextBox"},
+        {"name": "tbCell", "type": "TextBox"},
+        {"name": "tbEmail", "type": "TextBox"},
+        {"name": "tbCst", "type": "TextBox"},
+        {"name": "dtpCSTDate", "type": "DTPicker"},
+        {"name": "tbLst", "type": "TextBox"},
+        {"name": "dtpLSTDate", "type": "DTPicker"},
+        {"name": "txtsupliercode", "type": "TextBox"},
+        {"name": "txtUdyamType", "type": "TextBox"},
+        {"name": "txtUdyamNo", "type": "TextBox"},
+        {"name": "dtpUdyamDate", "type": "DTPicker"}
+      ]
+    },
+    {
+      "name": "fraDetails",
+      "type": "Frame",
+      "controls": [
+        {"name": "txtPanNo", "type": "TextBox"},
+        {"name": "txtTinNo", "type": "TextBox"},
+        {"name": "ChkSub", "type": "CheckBox", "caption": "Sub Contractor"},
+        {"name": "txtAName", "type": "TextBox", "usage": "Alias Name"},
+        {"name": "txtContactPerson", "type": "TextBox"},
+        {"name": "txteccno", "type": "TextBox"},
+        {"name": "txtareacd", "type": "TextBox"},
+        {"name": "txtexregno", "type": "TextBox"},
+        {"name": "dpexregdt", "type": "DTPicker"}
+      ]
+    },
+    {
+      "name": "fraGST",
+      "type": "Frame",
+      "controls": [
+        {"name": "txtProvisionalID", "type": "TextBox"},
+        {"name": "txtGSTRegNo", "type": "TextBox"},
+        {"name": "dtpGSTDate", "type": "DTPicker"}
+      ]
+    },
+    {
+      "name": "fraTerms",
+      "type": "Frame",
+      "controls": [
+        {"name": "CmbFrom", "type": "ComboBox", "usage": "TERMSMASTER TypeFlg='Form'"},
+        {"name": "CmbPackFoward", "type": "ComboBox", "usage": "TERMSMASTER TypeFlg='Packing & Forwarding'"},
+        {"name": "CmbDelIns", "type": "ComboBox", "usage": "TERMSMASTER TypeFlg='Delivery Instruction'"},
+        {"name": "CmbInsurance", "type": "ComboBox", "usage": "TERMSMASTER TypeFlg='Insurance'"},
+        {"name": "CmbFreight", "type": "ComboBox", "usage": "TERMSMASTER TypeFlg='Freight'"},
+        {"name": "CmbMode", "type": "ComboBox", "usage": "TERMSMASTER TypeFlg='Mode'"},
+        {"name": "CmbTerms", "type": "ComboBox", "usage": "TERMSMASTER TypeFlg='Payment Terms'"},
+        {"name": "txtCustomerFormula", "type": "TextBox", "usage": "COM_FormulaMast_Hdr lookup (Active=1, Module=SAL)"},
+        {"name": "txtVendorFormula", "type": "TextBox", "usage": "COM_FormulaMast_Hdr lookup (Active=1, Module=PUR)"},
+        {"name": "txtCurrency", "type": "TextBox", "usage": "COM_Currency_Master lookup"},
+        {"name": "txtCreditDays", "type": "TextBox"},
+        {"name": "cmbCreditDaysPeriod", "type": "ComboBox", "items": ["Delivery", "Last Receipt", "Last RR Approval", "Invoice"]}
+      ]
+    }
+  ],
+  "databaseOperations": [
+    {
+      "type": "EXECUTE",
+      "storedProcedure": "FAS_Ins_LedgerMaster",
+      "description": "Inserts into FAS_LedgerMaster"
+    },
+    {
+      "type": "EXECUTE",
+      "storedProcedure": "FAS_UP_LedgerMaster",
+      "description": "Updates FAS_LedgerMaster"
+    },
+    {
+      "type": "EXECUTE",
+      "storedProcedure": "FAS_INS_PARTY_MASTER",
+      "description": "Inserts into FAS_PARTY_MASTER"
+    },
+    {
+      "type": "EXECUTE",
+      "storedProcedure": "FAS_UP_PARTY_MASTER",
+      "description": "Updates FAS_PARTY_MASTER"
+    },
+    {
+      "type": "EXECUTE",
+      "storedProcedure": "FAS_INS_PARTY_ADDRESS",
+      "description": "Inserts into FAS_PARTY_ADDRESS"
+    },
+    {
+      "type": "EXECUTE",
+      "storedProcedure": "FAS_UP_PARTY_ADDRESS",
+      "description": "Updates FAS_PARTY_ADDRESS"
+    }
+  ],
+  "businessRules": [
+    {
+      "name": "Code Generation",
+      "description": "VendorCode is generated via Select Max(VendorCode) from FAS_PARTY_MASTER where AcType = 'P'/'D' and PartyName like 'X%'."
+    }
+  ]
+}
